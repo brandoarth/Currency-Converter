@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moedas3M.MainPage"
+             
+                      Title="Conversor de Moedas">
+
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="-15"
+        Spacing="10">
+            <Image
+            Source="porco.png"
+            HeightRequest="250"
+
+        />
+
+
+            <Label
+            Text="Digite o valor"
+            Style="{StaticResource lbl}"
+         />
+
+            <Entry
+            x:Name="txtValor" 
+            Margin="30,0,30,0"
+                Text="0.0"
+            Style="{StaticResource txt}"
+           />
+
+            <Label
+            Text="Escolha moeda de origem"
+            Style="{StaticResource SubHeadline}"
+          />
+
+            <Picker
+             x:Name="moedaOrigem"
+             Margin="30,0,30,0"
+             Style="{StaticResource cbb}"
+          />
+
+            <Label
+            Text="Escolha moeda de destino"
+            Style="{StaticResource SubHeadline}"
+           />
+
+            <Picker
+            x:Name="moedaDestino"
+            Margin="30,0,30,0"
+            Style="{StaticResource cbb}"
+           />
+
+            <Grid
+            ColumnDefinitions="*,*"
+            RowDefinitions="*">
+
+
+                <Button
+            Grid.Column="0" Grid.Row="0"
+            x:Name="CounterBtn"
+            Text="Calcular" 
+            Style="{StaticResource btn}" 
+            Clicked="CounterBtn_Clicked"
+                    />
+
+
+                <Button
+             Grid.Column="1" Grid.Row="0"
+             x:Name="btnLimpar"
+             Text="Limpar" 
+             Style="{StaticResource btn}"  
+             Clicked="btnLimpar_Clicked"
+
+                    />
+
+            </Grid>
+
+            <ActivityIndicator
+            x:Name="indicador"
+            IsRunning="False"
+            />
+
+            <Label
+            x:Name="lblMsg1"
+            Text="Nenhuma conversão realizada"
+            Style="{StaticResource lblresp}" 
+            />
+
+            <Label
+ 
+         x:Name="lblMsg2"
+         Text=".."
+         Style="{StaticResource lblresp}" 
+
+           />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
